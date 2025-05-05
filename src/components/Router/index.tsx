@@ -3,7 +3,16 @@
  */
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router_ = createBrowserRouter([],
+import { SliderFC } from "src/components/Slider";
+const router_ = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <SliderFC />
+    )
+  },
+  
+],
   {
     future: {
       v7_relativeSplatPath: true,

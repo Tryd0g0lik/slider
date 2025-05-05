@@ -87,6 +87,7 @@ module.exports = {
       {
         ts: 'never',
         tsx: 'never',
+        scss: 'always',
       },
     ],
     'no-shadow': 'off',
