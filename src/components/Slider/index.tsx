@@ -319,6 +319,15 @@ export function SliderFC(): JSX.Element {
             </div>
           </div>
         </div>
+        <div className="slider_float__buttons">
+          <div className="slider_float__button_left">
+            <span></span>
+            <span></span>
+          </div>
+          <div className="slider_float__button_right">
+            <button>Смотреть все</button>
+          </div>
+        </div>
       </section>
     </div>
     );

@@ -61,6 +61,7 @@ body{
     >div{
       display: inline-block;
       vertical-align: top;
+      
     }
     >div:nth-child(2){
       vertical-align: top;
@@ -83,8 +84,15 @@ body{
     display: flex;
     background-color: var(--slider_wite);
     padding-bottom: 10px;
+    gap: 11px;;
+    
   }
+    // slider_showcase
   .slider__fill-inner div.icons__fill{padding-left: 20px; width: 38px;}
+  .slider__fill-inner div.icons__fill:first-child{
+      padding-left: 9px;
+        width: 48px;
+    }
   .icons__fill {
     display:inline-block;
     // flex-direction: column;
@@ -191,6 +199,9 @@ body{
     }
     .slider_prices{
       background-color: var(--slider_gray);
+      padding-bottom: 15px;
+border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
     }
     .calculate {
       position: relative;
@@ -385,7 +396,55 @@ body{
   }
 
 }
-  
+  /****/
+  .slider_float__buttons{
+    max-width: 1655px;
+    width: 100%;
+    padding-top: 7px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    .slider_float__button_left{
+      min-height: 46px;
+      max-height: 46px;
+    }
+  }
+  .slider_float__button_left {
+    vertical-align: top;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 113px;
+    span{
+      display: inline-block;
+      width: 45px;
+      min-height: 45px;
+      max-height: 45px;
+      background: url(../../../infographics/left.svg) no-repeat center, var(--slider_gray);
+      border-radius: 80px;
+    }
+    span:last-child{
+      background: url(../../../infographics/right.svg) no-repeat center, var(--slider_gray);
+    }
+  }
+  .slider_float__button_right {
+    display: inline-block;
+    vertical-align: top;
+    width: 244px;
+    position: absolute;
+    top: 7px;
+    right: 263px;
+    button{
+      display: inline-block;
+      width: 242px;
+      background-color: var(--slider_red);
+      border-radius: 10px;
+      color: var(--slider_wite);
+      min-height: 44px;
+      max-height: 44px;
+    }
+  }
     /**COLORS*/
 :root {
   --slider_gray: rgb(233, 233, 233, 1);
