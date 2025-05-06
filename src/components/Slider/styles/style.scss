@@ -1,4 +1,12 @@
 /**FONTS */
+html {
+  font-size: 16px;
+}
+
+.h {
+  font-size: 1.25rem;
+}
+
 .ibm-plex-sans-500 {
   font-family: "IBM Plex Sans", sans-serif;
   font-optical-sizing: auto;
@@ -6,6 +14,8 @@
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+  @extend .h;
+  color: var(--slider_header);
 }
 
 /**SLIDER*/
@@ -30,27 +40,143 @@
 .slider {
   .slider_name h2 {
     @extend .ibm-plex-sans-500;
+    
+    font-size: 2.75rem;
   }
-
-  .slider_icons__fill {
-    min-width: 320px;
-    width: 100px;
+  .slider__fill-inner{
+    width: inherit;
+    >div{
+      display: inline-block;
+      vertical-align: top;
+    }
+    >div:nth-child(2){
+      vertical-align: top;
+      min-height: 268px;
+      max-width: calc(340px - 40px);
+      width: 100%;
+      max-width: calc(340px - 40px);
+    }
+    img {
+      margin: 0 auto;
+      width: 152px;
+    }
+  }
+  .slider__fill {
     max-width: 340px;
   }
 
-    .icons {
-      width: 38px;
+  .icons__fill {
+    display:block;
+    // flex-direction: column;
+    // gap: 5px;
+    width: 38px;
+
+	  >div {
+		  min-height: 35px;
+		  width: 100%;
+		  max-width: 35px;
+      margin-bottom: 5px;
+		}
+    >div:last-child{
+      margin-bottom: 0;
     }
+    
+  }
   
-    .icon {
-      display: flex;
-      width: 35px;
-      min-height: 35px;
-      width: 100%;
-      max-width: 35px;
+  .icon {
       background: url(../../../infographics/top.svg) no-repeat center, rgb(233, 233, 233, 1);
+	}
+  .icon2 {
+		background: url(../../../infographics/garant.svg) no-repeat center, rgb(233, 233, 233, 1);
+	}
+	.icon3 {
+		background: url(../../../infographics/cacheback.svg) no-repeat center, rgb(233, 233, 233, 1);
+	}
+	.icon4 {
+		background: url(../../../infographics/present.svg) no-repeat center, rgb(233, 233, 233, 1);
+	}
+	.icon5 {
+		background: url(../../../infographics/trand.svg) no-repeat center, rgb(233, 233, 233, 1);
+	}
+  /***/
+  .slider_showcase{
+    display: block;
+    width: inherit;
+    background-color: var(--slider_gray);
+    .icons__fill {
+        display: block;
+        width: 100%;
+        
+    
+        >div.icon{
+          min-height: inherit;
+            width: 100%;
+            max-width: inherit;
+            margin-bottom: 0;
+            background: none;
+            position: relative;
+            padding: 10px 30px 0;
+          div {
+              display: inline-block;
+              width: 30px;
+              min-height: 30px;
+              max-height: 30px;
+              background: url(../../../infographics/time_yaer.svg) no-repeat center, rgb(233, 233, 233, 1);
+              position: absolute;
+              left: 0;
+              top: 0;
+              z-index: 2;
+            }
+          
+            span {
+              @extend .ibm-plex-sans-500;
+              font-size: 0.9375rem;
+              font-weight: 400;
+              vertical-align: top;
+              line-height: 1;
+            }
+        }
+      >div.icon2 div{
+        background: url(../../../infographics/type_red.svg) no-repeat center, rgb(233, 233, 233, 1);
+      }
+      >div.icon3 div{
+        background: url(../../../infographics/type_dark.svg) no-repeat center, rgb(233, 233, 233, 1);
+      }
+      }
+  }
+  h3{
+    @extend .ibm-plex-sans-500;
+    font-size: 1.25rem;
+    
+  }
+  .slider__rating{
+    width: 197px;
+    min-height: 24px;
+    max-height: 24px;
+    span,
+    .slider__rating-common{
+      display: inline-block;
     }
+    .slider__rating-common:after{
+      content: "отзывов";
+
     }
+    span {
+      width: 20px;
+      min-height: 20px;
+      max-height: 20px;
+    }
+    .slider__rating-common{
+      @extend .ibm-plex-sans-500;
+      font-weight: 400;
+      font-size: 0.75rem;
+    }
+  }
+
+}
   
     /**COLORS*/
-    :root {}
+:root {
+  --slider_gray: rgb(233, 233, 233, 1);
+  --slider_header: rgb(58, 58, 58, 1);
+}
