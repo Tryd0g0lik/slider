@@ -6,7 +6,9 @@ html {
 .h {
   font-size: 1.25rem;
 }
-
+body{
+  padding-bottom: 50px;
+}
 .ibm-plex-sans-500 {
   font-family: "IBM Plex Sans", sans-serif;
   font-optical-sizing: auto;
@@ -19,32 +21,43 @@ html {
 }
 
 /**SLIDER*/
+#root{
+    margin: 0 auto;
+}
 #root,
 #root .slider {
   min-width: 320px;
   max-width: 1920px;
-
-  .slider {
-    max-width: 1657px;
-    /* 1700*/
-    margin: 0 auto;
-    margin-left: 333px;
-  }
 }
+
 
 #root {
   padding-top: 35px;
+  .slider {
+      max-width: 1657px;
+      /* 1700*/
+      margin: 0 auto;
+      margin-left: 184px;
+    }
 }
 
 /***/
 .slider {
+  .slider__track{
+    background-color: var(--slider_wite);
+    overflow:hidden;
+    max-width: 1655px;
+    width: 100%;
+  }
   .slider_name h2 {
     @extend .ibm-plex-sans-500;
-    
+    text-transform: uppercase;
     font-size: 2.75rem;
   }
   .slider__fill-inner{
-    width: inherit;
+    width: 100%;
+    min-width:340px;
+    // margin-left: 10px;
     >div{
       display: inline-block;
       vertical-align: top;
@@ -52,30 +65,40 @@ html {
     >div:nth-child(2){
       vertical-align: top;
       min-height: 268px;
-      max-width: calc(340px - 40px);
       width: 100%;
-      max-width: calc(340px - 40px);
+      max-width: calc(340px - 50px);
+      padding-bottom: 6px;
+      gap: 10px;
+      overflow:hidden;
     }
     img {
       margin: 0 auto;
       width: 152px;
     }
   }
-  .slider__fill {
-    max-width: 340px;
+  .slider__fill-inner:first-child{
+    margin-left: 0;
   }
-
+  .slider__fill {
+    display: flex;
+    background-color: var(--slider_wite);
+    padding-bottom: 10px;
+  }
+  .slider__fill-inner div.icons__fill{padding-left: 20px; width: 38px;}
   .icons__fill {
-    display:block;
+    display:inline-block;
     // flex-direction: column;
     // gap: 5px;
-    width: 38px;
+    padding-top: 11px;
+    
+    box-sizing: border-box;
 
 	  >div {
-		  min-height: 35px;
-		  width: 100%;
-		  max-width: 35px;
-      margin-bottom: 5px;
+		  min-height: 36px;
+		  width: 35px;
+		  max-height: 36px;
+      margin-bottom: 3px;
+      box-sizing: content-box;
 		}
     >div:last-child{
       margin-bottom: 0;
@@ -84,6 +107,7 @@ html {
   }
   
   .icon {
+    
       background: url(../../../infographics/top.svg) no-repeat center, rgb(233, 233, 233, 1);
 	}
   .icon2 {
@@ -101,75 +125,262 @@ html {
   /***/
   .slider_showcase{
     display: block;
-    width: inherit;
+    width: 100%;
     background-color: var(--slider_gray);
-    .icons__fill {
-        display: block;
+    padding-top: 23px;
+  }
+    .icons__fill,
+    .slider_prices,
+    .slider_prices__calculate,
+    .calculate {
+      display: block;
+      width: 100%;
+    }
+    .slider_showcase .icons__fill >div.icon{
+      min-height: inherit;
         width: 100%;
+        max-width: inherit;
+        margin-bottom: 0;
+        background: none;
+        position: relative;
+        padding: 10px 30px 2px;
+    }
+     .slider_showcase .icons__fill,
+     .slider_prices__calculate{
+      
+        padding-left: 19px;
+        padding-top: 10px;
+    }
+    .icons__fill {
+      display: block;
+      width: inherit;
+      
+      >div {
         
-    
-        >div.icon{
-          min-height: inherit;
-            width: 100%;
-            max-width: inherit;
-            margin-bottom: 0;
-            background: none;
-            position: relative;
-            padding: 10px 30px 0;
-          div {
-              display: inline-block;
-              width: 30px;
-              min-height: 30px;
-              max-height: 30px;
-              background: url(../../../infographics/time_yaer.svg) no-repeat center, rgb(233, 233, 233, 1);
-              position: absolute;
-              left: 0;
-              top: 0;
-              z-index: 2;
-            }
-          
-            span {
-              @extend .ibm-plex-sans-500;
-              font-size: 0.9375rem;
-              font-weight: 400;
-              vertical-align: top;
-              line-height: 1;
-            }
+  
+        div {
+          display: inline-block;
+          width: 30px;
+          min-height: 30px;
+          max-height: 30px;
+          background: url(../../../infographics/time_yaer.svg) no-repeat center, rgb(233, 233, 233, 1);
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 2;
         }
-      >div.icon2 div{
+  
+        span {
+          @extend .ibm-plex-sans-500;
+          font-size: 0.9375rem;
+          font-weight: 400;
+          vertical-align: top;
+          line-height: 0.8;
+          display: inline-block;
+          padding-left: 11px;
+        }
+      }
+  
+      >div.icon2 div {
         background: url(../../../infographics/type_red.svg) no-repeat center, rgb(233, 233, 233, 1);
       }
-      >div.icon3 div{
+  
+      >div.icon3 div {
         background: url(../../../infographics/type_dark.svg) no-repeat center, rgb(233, 233, 233, 1);
       }
+    }
+    .slider_prices{
+      background-color: var(--slider_gray);
+    }
+    .calculate {
+      position: relative;
+      >div{
+        display: inline-block;
       }
-  }
+      .calculate__info{
+        background-color: var(--slider_wite);
+        border: 0;
+        border-radius: 4px;
+        min-width: 100px;
+        min-height: 44px;
+        max-height: 44px;
+        padding: 5px;
+        text-align: center;
+        position: relative;
+        >div{
+          @extend .ibm-plex-sans-500;
+          font-size: 0.9375rem;
+          display: inline-block;
+        }
+        .calculate__reduce,
+        .calculate__increase{
+          position: absolute;
+          
+          top: 0;
+          @extend .ibm-plex-sans-500;
+          font-size: 57px;
+          line-height: 1;
+          font-weight: 300;
+          top: -12px;
+          
+        }
+        .calculate__reduce{
+          left: 7px;
+        }
+        .calculate__increase{
+          right: 4px;
+          font-size: 40px;
+          top: -1px;
+        }
+        .calculate__quatity{
+          padding-top: 5px;
+        }
+      }
+      .calculate_button{
+        background-color: var(--slider_red);
+        color: var(--slider_wite);
+        width: 143px;
+        min-height: 43px;
+        max-height: 43px;
+        padding-top: 10px;
+        margin-left: 10px;;
+        border-radius: 6px;
+        text-align: center;
+        vertical-align: top;
+
+      }
+      .calculate__liks{
+        position: absolute;
+        margin: 0;
+        top: 9px;
+        right: 21px;
+        width: 25px;
+        min-height: 22px;
+        max-height: 22px;
+        background: url(../../../infographics/liks.svg) no-repeat center, rgb(233, 233, 233, 1);
+      }
+    }
+    .slider_prices__calculate{
+      padding-top: 15px;;
+    }
+    .showcase_button{
+      padding-top: 12px;
+      padding-bottom: 5px;
+      box-sizing: content-box;
+      min-height: 47px;
+      max-height: 47px;
+    }
+    .slider_showcase__button{
+      display: block;
+      width: 300px;
+      border: var(--slider_border);
+      border-radius: 10px;
+      padding-bottom: 11px;
+      padding-top: 7px;
+      text-align: center;
+      color: var(--slider_header);
+      
+    }
+    
+    // calculate__info
+    .slider_prices__inner {
+      padding-top: 16px;
+      padding-left: 18px;
+    
+      >div span{
+        position: relative;
+        display: inline-block;
+          text-decoration: line-through;
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        @extend .ibm-plex-sans-500;
+      }
+      >div span::after {
+        content: "₽";
+          position: absolute;
+          top: 0;
+          @extend .ibm-plex-sans-500;
+          font-weight: 700;
+          font-size: 1.25rem;
+      }
+      .slider_prices__inner-new{
+        padding-top: 1px;
+      }
+      .slider_prices__inner-old span::after{
+        right: -16px;
+      }
+      .slider_prices__inner-new span::after{
+        right: -20px;
+        font-size: 1.6rem;
+        
+      }
+      .slider_prices__inner-old span {
+        color: var(--slider_gray_lite);
+        text-decoration: line-through;
+      }
+  
+      .slider_prices__inner-new span{
+        color: var(slider_gray);
+        font-size: 1.625rem;
+        color: var(--slider_header);
+        line-height: 1.1;
+      }
+    }
+    
   h3{
     @extend .ibm-plex-sans-500;
-    font-size: 1.25rem;
-    
+    font-size: 1.2rem;
+    letter-spacing: 0.02px;
+    display: block;
+    padding: 0 5px 0 5px;
+    line-height: 1.2;
   }
   .slider__rating{
-    width: 197px;
+    // width: 197px;
     min-height: 24px;
     max-height: 24px;
+    padding-top: 11px;
+    padding-left: 20px;
+    box-sizing: content-box;
+    
     span,
     .slider__rating-common{
       display: inline-block;
+      span{
+        position: absolute;
+        top: 4px;
+        display: inline-block;
+        line-height: 1;
+      }
     }
+    
     .slider__rating-common:after{
       content: "отзывов";
-
+      position: absolute;
+      right: -44px;
     }
     span {
       width: 20px;
       min-height: 20px;
       max-height: 20px;
+      background: url(../../../infographics/star.svg) no-repeat center;
+      padding-right: 4px;
+      box-sizing: content-box;
+    }
+    span:last-of-type{
+      background: url(../../../infographics/star_dark.svg) no-repeat center;
     }
     .slider__rating-common{
       @extend .ibm-plex-sans-500;
       font-weight: 400;
       font-size: 0.75rem;
+      vertical-align: top;
+      box-sizing: content-box;
+      padding-left: 10px;
+      position: relative;
+      min-width: 24px;
+
     }
   }
 
@@ -179,4 +390,8 @@ html {
 :root {
   --slider_gray: rgb(233, 233, 233, 1);
   --slider_header: rgb(58, 58, 58, 1);
+  --slider_gray_lite: rgb(136, 136, 136, 1);
+  --slider_red: rgba(228, 29, 27, 1);
+  --slider_wite: rgba(255, 255, 255, 1);
+  --slider_border: 1px solid rgba(136, 136, 136, 1);
 }
