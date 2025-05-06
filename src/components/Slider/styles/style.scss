@@ -1,1 +1,56 @@
+/**FONTS */
+.ibm-plex-sans-500 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
+/**SLIDER*/
+#root,
+#root .slider {
+  min-width: 320px;
+  max-width: 1920px;
+
+  .slider {
+    max-width: 1657px;
+    /* 1700*/
+    margin: 0 auto;
+    margin-left: 333px;
+  }
+}
+
+#root {
+  padding-top: 35px;
+}
+
+/***/
+.slider {
+  .slider_name h2 {
+    @extend .ibm-plex-sans-500;
+  }
+
+  .slider_icons__fill {
+    min-width: 320px;
+    width: 100px;
+    max-width: 340px;
+  }
+
+    .icons {
+      width: 38px;
+    }
+  
+    .icon {
+      display: flex;
+      width: 35px;
+      min-height: 35px;
+      width: 100%;
+      max-width: 35px;
+      background: url(../../../infographics/top.svg) no-repeat center, rgb(233, 233, 233, 1);
+    }
+    }
+  
+    /**COLORS*/
+    :root {}

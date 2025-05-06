@@ -11,6 +11,7 @@ html * {
 html,
 body,
 #root,
+#root slider,
 #root>div:first-child {
 
   height: 100vh;
