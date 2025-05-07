@@ -231,7 +231,7 @@ border-bottom-left-radius: 24px;
         .calculate__reduce,
         .calculate__increase{
           position: absolute;
-          
+          cursor: pointer;;
           top: 0;
           @extend .ibm-plex-sans-500;
           font-size: 57px;
@@ -253,6 +253,7 @@ border-bottom-left-radius: 24px;
         }
       }
       .calculate_button{
+        cursor: pointer;
         background-color: var(--slider_red);
         color: var(--slider_wite);
         width: 143px;
@@ -341,6 +342,7 @@ border-bottom-left-radius: 24px;
         font-size: 1.625rem;
         color: var(--slider_header);
         line-height: 1.1;
+        text-decoration: none;
       }
     }
     
@@ -422,6 +424,7 @@ border-bottom-left-radius: 24px;
     justify-content: space-between;
     width: 113px;
     span{
+      cursor: pointer;
       display: inline-block;
       width: 45px;
       min-height: 45px;
@@ -497,6 +500,7 @@ border-bottom-left-radius: 24px;
         border-radius: 12px;
       }
     .calculate__liks {
+      cursor: pointer;
       right: 22px;
       width: 25px;
     }
@@ -606,13 +610,13 @@ border-bottom-left-radius: 24px;
         padding-bottom: 15px;
         max-width: 180px;
       }
-      >div.icons__fill:first-child {
-        padding-left: 9px;
-        padding-top: 6px;
-      }
       div.icons__fill{
           padding-left: 9px;
           padding-top:6px;
+      }
+      >div.icons__fill:first-child {
+        padding-left: 9px;
+        padding-top: 12px;
       }
     }
 
@@ -626,11 +630,11 @@ border-bottom-left-radius: 24px;
     }
    
     .slider__rating {
-      padding-left: 11px;
+      padding-left: 9px;
       padding-top: 8px;
       span {
         padding-right: 0;
-          margin-left: 2px;
+          margin-left: 3px;
       }
       .slider__rating-common {
        min-height: 18px;
@@ -687,6 +691,109 @@ border-bottom-left-radius: 24px;
   .slider_float__button_right {
     top: 10px;
     right: 26px;
+  }
+}
+
+@media all and (max-width: 480.02px){
+  .slider{
+    .slider__track {
+      padding-top: 38px;
+      padding-left: 19px;
+    }
+    .slider_name h2 {
+      font-size: 1.55rem;
+    }
+    .slider__fill-inner {
+      padding-top: 18px;
+      min-width: 216px;
+      >div:nth-child(2){
+        padding-top: 0;
+        padding-bottom: 12px;
+        max-width: 154px;
+        
+      }
+    }
+    .slider__rating span{
+      margin-left: 5px;
+    }
+    .slider__fill-inner>div.icons__fill:first-child {
+      padding-left: 15px;
+      padding-top: 0;
+    }
+    .slider_prices__calculate{
+      padding-left: 13px;
+    }
+    .calculate .calculate_button{
+      max-width: 154px;
+      min-height: 45px;
+      max-height: 44px;
+      margin: 0;
+    }
+    .showcase_button{
+      max-width: 192px;
+    }
+    .slider_float__button_left {
+      width: 83px;
+      padding-top: 12px;
+    }
+    .slider_float__button_left span{
+      width: 35px;
+      min-height: 35px;
+      max-height: 35px;
+    }
+
+  }
+  .slider_float__button_right{
+    top: 13px;
+      right: -79px;
+    
+     button{
+      width: 147px;
+    }
+}
+}
+
+@media (max-width: 320.02px) {
+  .slider {
+    .slider__track {
+      padding-top: 17px;   
+    }
+    .slider__fill{
+      width: 300px;
+      overflow: hidden;
+    }
+    .slider__fill-inner {
+      padding-top: 24px;
+      min-width: 301px;
+
+      >div:nth-child(2) {
+          padding-bottom: 2px;
+        }
+    }
+    .slider__fill-inner img {
+      width: 124px;
+    }
+    .slider__rating .slider__rating-common span {
+      padding-left: 0;
+    }
+   .calculate .calculate_button {
+      max-width: 221px;
+    }
+    .slider_prices__calculate {
+      padding-left: 13px;
+      padding-top: 7px;
+    }
+    .showcase_button {
+      max-width: 262px;
+    }
+
+    .calculate .calculate__liks {
+      right: 31px;
+      top: 11px;
+    }
+    .slider_float__button_right {
+      top: 22px;
+    }
   }
 }
 
