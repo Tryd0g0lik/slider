@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.github-pages }}
+      url: ${{ steps.deployment.outputs.slider }}
       
     steps:
     - uses: actions/checkout@v4
