@@ -30,7 +30,9 @@ jobs:
         npm install
         # npx webpack
     - name: Build frontend
-      run: npm run build
+      run: |
+        mkdir -p dist
+        npm run build
     
     # Публикация в GitHub Packages
     - name: Publish to GitHub Packages
