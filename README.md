@@ -2,6 +2,7 @@
 - pixel-perfect;
 - mobile-first и desktop-first.
 
+arhive.zip
 
 ```code
 Сверстать слайдер товаров по макету из figma, с использованием: react js, scss.

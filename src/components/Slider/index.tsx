@@ -3,6 +3,8 @@
  */
 import React, {JSX} from "react";
 import "src/components/Slider/styles/style.scss";
+import { handlerLeftMoveFC } from "src/components/Slider/handlers/hadlerLeftMove";
+import { handlerRightMoveFC } from "src/components/Slider/handlers/hadleRightMove";
 
 export function SliderFC(): JSX.Element {
   return (
@@ -83,7 +85,7 @@ export function SliderFC(): JSX.Element {
               <div className="icon5"></div>
             </div>
             <div className="image">
-              <img src="/pictures/image_70.png" alt="slider1" />
+              <img src="/pictures/image_71.png" alt="slider1" />
             </div>
             <div className="slider_showcase">
               <div className="h3 slider_name">
@@ -266,7 +268,7 @@ export function SliderFC(): JSX.Element {
               <div className="icon5"></div>
             </div>
             <div className="image">
-              <img src="/pictures/image_70.png" alt="slider1" />
+              <img src="/pictures/image_71.png" alt="slider1" />
             </div>
             <div className="slider_showcase">
               <div className="h3 slider_name">
@@ -321,8 +323,8 @@ export function SliderFC(): JSX.Element {
         </div>
         <div className="slider_float__buttons">
           <div className="slider_float__button_left">
-            <span></span>
-            <span></span>
+            <span onMouseDown={handlerLeftMoveFC}></span>
+            <span onMouseDown={handlerRightMoveFC}></span>
           </div>
           <div className="slider_float__button_right">
             <button>Смотреть все</button>
