@@ -5,11 +5,19 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  
+permissions:
+  checks: write
+  contents: write
+  pages: write
+  id-token: write
+  deployments: write 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.github-pages }}
+      
     steps:
     - uses: actions/checkout@v4
 
@@ -40,6 +48,7 @@ jobs:
       uses: actions/upload-artifact@v4.6.2
       with:
         name: frontend-package
+        token: # default is ${{ github.token }}
         path: |
           dist/
           package.json
