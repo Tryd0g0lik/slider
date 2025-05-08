@@ -20,14 +20,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-    # Кэширование зависимостей
-    - name: Cache dependencies
-      uses: actions/cache@v4.2.3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+    
     - name: Install dependencies
       run: |
         npm install
@@ -36,18 +29,23 @@ jobs:
       run: |
         mkdir -p dist
         npm run build
-    
+    - name: Setup Pages
+      uses: actions/configure-pages@v5.0.0
     # Публикация в GitHub Packages
-    - name: Publish to GitHub Packages
-      uses: actions/upload-artifact@v4.6.2
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3.0.1
       with:
-        name: frontend-package
-        github_token: ${{ secrets.PAGES }}
-        path: |
-          dist/
-          package.json
-          keep_files: false
-        retention-days: 10
+        path: 'dist'
+    # - name: Publish to GitHub Packages
+    #   uses: actions/upload-artifact@v4.6.2
+    #   with:
+    #     name: frontend-package
+    #     github_token: ${{ secrets.PAGES }}
+    #     path: |
+    #       dist/
+    #       package.json
+    #       keep_files: false
+    #     retention-days: 10
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4.0.5
