@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: Build and Publish Frontend to GitHub Packages
 
 on:
   push:
@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.x, 22.x]
-
     steps:
     - uses: actions/checkout@v4
 
@@ -21,11 +17,18 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-
-    - name: Build
+    # Кэширование зависимостей
+    - name: Cache dependencies
+      uses: actions/cache@v4.2.3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install dependencies
       run: |
         npm install
-        npx webpack
+        # npx webpack
     - name: Build frontend
       run: npm run build
     - name: Upload build artifact
@@ -33,3 +36,12 @@ jobs:
       with:
         name: frontend-dist
         path: dist/
+    # Публикация в GitHub Packages
+    - name: Publish to GitHub Packages
+      uses: actions/upload-artifact@v3.0.1
+      with:
+        name: frontend-package
+        path: |
+          dist/
+          package.json
+        retention-days: 5
