@@ -34,7 +34,7 @@ jobs:
     
     # Публикация в GitHub Packages
     - name: Publish to GitHub Packages
-      uses: actions/upload-artifact@v3.0.1
+      uses: actions/upload-artifact@v4.6.2
       with:
         name: frontend-package
         path: |
