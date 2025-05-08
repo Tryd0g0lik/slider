@@ -2,7 +2,7 @@
   "name": "slider",
   "version": "1.0.0",
   "description": "\"README.md\"",
-   "main": "./src/index.ts",
+  "main": "./src/index.ts",
   "type": "commonjs",
   "private": true,
   "dependencies": {
