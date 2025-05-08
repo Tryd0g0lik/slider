@@ -18,7 +18,7 @@ module.exports = {
   {
     index: {
       import: './src/index.ts',
-      dependOn: '.'
+      dependOn: 'shared'
     },
     // https://webpack.js.org/guides/code-splitting/#entry-dependencies
     another: {
@@ -33,7 +33,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/main-[id]-[fullhash].js',
-    publicPath: '/slider/',
+    publicPath: '.',
     // clean: true,
 
   },
