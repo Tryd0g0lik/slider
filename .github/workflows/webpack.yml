@@ -31,11 +31,7 @@ jobs:
         # npx webpack
     - name: Build frontend
       run: npm run build
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: frontend-dist
-        path: dist/
+    
     # Публикация в GitHub Packages
     - name: Publish to GitHub Packages
       uses: actions/upload-artifact@v3.0.1
