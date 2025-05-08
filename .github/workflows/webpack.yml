@@ -40,4 +40,5 @@ jobs:
         path: |
           dist/
           package.json
-        retention-days: 5
+          keep_files: false
+        retention-days: 10
