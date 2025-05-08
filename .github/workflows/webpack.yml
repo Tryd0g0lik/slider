@@ -48,7 +48,7 @@ jobs:
       uses: actions/upload-artifact@v4.6.2
       with:
         name: frontend-package
-        token: ${{ github.github-pages.pages }}
+        token: ${{ github.slider.PAGES }}
         path: |
           dist/
           package.json
