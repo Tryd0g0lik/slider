@@ -3,23 +3,18 @@ name: Build and Publish Frontend to GitHub Packages
 on:
   push: 
     branches: [ "master" ]
+    paths:
+    - "dist"
   pull_request:
     branches: [ "master" ]
-permissions:
-  checks: write
-  contents: write
-  pages: write
-  id-token: write
-  deployments: write 
+  
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.slider }}
-      
+
     steps:
     - uses: actions/checkout@v4
+    
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
@@ -41,19 +36,14 @@ jobs:
       run: |
         mkdir -p dist
         npm run build
-    - name: Setup Pages
-      uses: actions/configure-pages@v5.0.0
+    
     # Публикация в GitHub Packages
     - name: Publish to GitHub Packages
       uses: actions/upload-artifact@v4.6.2
       with:
         name: frontend-package
-        token: ${{ github.github-pages.PAGES }}
         path: |
           dist/
           package.json
           keep_files: false
         retention-days: 10
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4.0.5
