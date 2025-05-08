@@ -18,7 +18,7 @@ module.exports = {
   {
     index: {
       import: './src/index.ts',
-      dependOn: 'shared'
+      dependOn: '.'
     },
     // https://webpack.js.org/guides/code-splitting/#entry-dependencies
     another: {
