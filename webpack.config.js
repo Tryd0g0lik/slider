@@ -8,7 +8,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-
+const CopyPlugin = require("copy-webpack-plugin");
 // import ChunksWebpackPlugin from 'chunks-webpack-plugin';
 
 module.exports = {
@@ -121,7 +121,11 @@ module.exports = {
     // new ChunksWebpackPlugin(
     //   { generateChunksFiles: false }
     // ),
-
+    new CopyPlugin({
+      patterns: [
+        { from: "src/pictures", to: "pictures" },
+      ]
+    }),
     new BundleTracker({
       path: path.join(__dirname, '../bundles'),
       filename: 'webpack-stats.json'
