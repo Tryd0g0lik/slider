@@ -2,7 +2,8 @@
   "name": "slider",
   "version": "1.0.0",
   "description": "\"README.md\"",
-  "main": "./src/index.ts",
+  "main": "src/index.js",
+  "homepage": "https://gitname.github.io/slider/dist/index.html",
   "type": "commonjs",
   "private": true,
   "dependencies": {
@@ -112,12 +113,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tryd0g0lik/admin_ui.git"
+    "url": "git+https://github.com/Tryd0g0lik/slider.git"
   },
   "author": "work80@mail.ru",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tryd0g0lik/admin_ui/issues"
-  },
-  "homepage": "https://github.com/Tryd0g0lik/admin_ui#readme"
+    "url": "https://github.com/Tryd0g0lik/slider/issues"
+  }
 }
