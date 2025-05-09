@@ -1,5 +1,5 @@
 
-Кнопки [для прелистования елементов в слайдере](https://gitname.github.io/slider/index.html) - работает.
+Кнопки [для прелистования елементов в слайдере](https://tryd0g0lik.github.io/slider/index.html) - работает.
 "Смотрите все" просто HTML.
 - резиновая вёрстка;
 - pixel-perfect;
