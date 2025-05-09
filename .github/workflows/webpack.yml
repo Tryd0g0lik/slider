@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          npm: cache        
+          npm: cache
       - name: Install dependencies
         run: |
           npm ci
@@ -39,6 +39,6 @@ jobs:
       - name: Deploy_or_public
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.PAGES }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           
