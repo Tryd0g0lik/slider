@@ -33,7 +33,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/main-[id]-[fullhash].js',
-    
+    publicPath: '/slider/',
     // clean: true,
 
   },
