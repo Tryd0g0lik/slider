@@ -30,7 +30,7 @@ jobs:
           npm: cache
       - name: Install dependencies
         run: |
-          npm ci
+          npm install
           # npx webpack
       - name: Build frontend
         run: |
