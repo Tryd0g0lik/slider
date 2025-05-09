@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkslider=self.webpackChunkslider||[]).push([[332],{814:(e,s,l)=>{var r=l(543),n=l.n(r);console.log(n().join(["Another","module","loaded!"]," "))}},e=>{e.O(0,[804],(()=>{return s=814,e(e.s=s);var s}));e.O()}]);
