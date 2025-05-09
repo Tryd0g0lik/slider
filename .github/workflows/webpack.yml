@@ -46,10 +46,15 @@ jobs:
       # Публикация в GitHub Packages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5
+        # with:
+          # path: './dist'
+      # - name: Deploy to GitHub Pages
+        # id: deployment
+        # uses: actions/deploy-pages@v4.0.5
         # with:
             # folder: dist
+      - name: Deploy_or_public
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.PAGES }}
+          publish_dir: ./dist
