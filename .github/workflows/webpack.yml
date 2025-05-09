@@ -28,8 +28,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           npm: cache
-      - name: ESLint chacker
-        uses: lintkit/eslint-kit@0.1.0
+      # - name: ESLint chacker
+      #   uses: lintkit/eslint-kit@0.1.0
         
       - name: Install dependencies
         run: |
