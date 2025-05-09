@@ -85,7 +85,7 @@ export function SliderFC(): JSX.Element {
               <div className="icon5"></div>
             </div>
             <div className="image">
-              <img src="/pictures/image_71.png" alt="slider1" />
+              <img src="/slider/pictures/image_71.png" alt="slider1" />
             </div>
             <div className="slider_showcase">
               <div className="h3 slider_name">
@@ -146,7 +146,7 @@ export function SliderFC(): JSX.Element {
               <div className="icon5"></div>
             </div>
             <div className="image">
-              <img src="/pictures/image_70.png" alt="slider1" />
+              <img src="/slider/pictures/image_70.png" alt="slider1" />
             </div>
             <div className="slider_showcase">
               <div className="h3 slider_name">
@@ -207,7 +207,7 @@ export function SliderFC(): JSX.Element {
               <div className="icon5"></div>
             </div>
             <div className="image">
-              <img src="/pictures/image_70.png" alt="slider1" />
+              <img src="/slider/pictures/image_70.png" alt="slider1" />
             </div>
             <div className="slider_showcase">
               <div className="h3 slider_name">
@@ -268,7 +268,7 @@ export function SliderFC(): JSX.Element {
               <div className="icon5"></div>
             </div>
             <div className="image">
-              <img src="/pictures/image_71.png" alt="slider1" />
+              <img src="/slider/pictures/image_71.png" alt="slider1" />
             </div>
             <div className="slider_showcase">
               <div className="h3 slider_name">

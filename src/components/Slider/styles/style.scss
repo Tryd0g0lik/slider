@@ -361,8 +361,10 @@ border-bottom-left-radius: 24px;
     padding-top: 11px;
     padding-left: 20px;
     box-sizing: content-box;
-    
     span,
+      .slider__rating-common {
+          display: inline-block;
+        }
     .slider__rating-common{
       display: inline-block;
       span{
@@ -378,7 +380,7 @@ border-bottom-left-radius: 24px;
       position: absolute;
       right: -44px;
     }
-    span {
+        >span {
       width: 20px;
       min-height: 20px;
       max-height: 20px;
@@ -386,7 +388,7 @@ border-bottom-left-radius: 24px;
       padding-right: 4px;
       box-sizing: content-box;
     }
-    span:last-of-type{
+        >span:last-of-type {
       background: url(../../../infographics/star_dark.svg) no-repeat center;
     }
     .slider__rating-common{
