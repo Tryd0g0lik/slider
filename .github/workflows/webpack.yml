@@ -40,10 +40,10 @@ jobs:
           mkdir -p dist
           npm run build
         
-      - name: Setup Pages
-        uses: actions/configure-pages@v5.0.0
-        with:
-          token: ${{ secrets.PAGES }}
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v5.0.0
+      #   with:
+      #     token: ${{ secrets.PAGES }}
       # Публикация в GitHub Packages
       # - name: Upload artifact
       #   uses: actions/upload-pages-artifact@v3.0.1
@@ -59,4 +59,4 @@ jobs:
         with:
           github_token: ${{ secrets.PAGES }}
           publish_dir: ./dist
-          publish_branch: gh-pages  # default: gh-pages
+          # publish_branch: gh-pages  # default: gh-pages
