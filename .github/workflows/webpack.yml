@@ -28,35 +28,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           npm: cache
-      # - name: ESLint chacker
-      #   uses: lintkit/eslint-kit@0.1.0
-        
       - name: Install dependencies
         run: |
           npm ci
           # npx webpack
       - name: Build frontend
         run: |
-          mkdir -p dist
           npm run build
         
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v5.0.0
-      #   with:
-      #     token: ${{ secrets.PAGES }}
-      # Публикация в GitHub Packages
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3.0.1
-      #   with:
-      #     path: './dist'
-      # - name: Deploy to GitHub Pages
-        # id: deployment
-        # uses: actions/deploy-pages@v4.0.5
-        # with:
-            # folder: dist
       - name: Deploy_or_public
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.PAGES }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # publish_branch: gh-pages  # default: gh-pages
+          
