@@ -4,7 +4,7 @@ on:
   push: 
     branches: [ "master" ]
     paths:
-    - "dist"
+    - "./dist"
   pull_request:
     branches: [ "master" ]
 permissions:
@@ -46,9 +46,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: 'dist'
+          path: './dist'
       - name: Deploy to GitHub Pages
-        id: deployment
+        # id: deployment
         uses: actions/deploy-pages@v4.0.5
-        with:
-            folder: dist
+        # with:
+            # folder: dist
