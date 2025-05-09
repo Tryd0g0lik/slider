@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "\"README.md\"",
   "main": "src/index.js",
-  "homepage": "https://gitname.github.io/slider/dist/index.html",
+  "homepage": "https://gitname.github.io/slider/index.html",
   "type": "commonjs",
   "private": true,
   "dependencies": {

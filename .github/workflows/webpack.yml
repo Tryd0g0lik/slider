@@ -30,7 +30,7 @@ jobs:
           npm: cache
       - name: Install dependencies
         run: |
-          npm ci
+          npm install
           # npx webpack
       - name: Build frontend
         run: |
@@ -41,4 +41,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          
+          # publish_dir: ./dist
+

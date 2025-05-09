@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SliderFC } from "src/components/Slider";
 const router_ = createBrowserRouter([
   {
-    path: "/",
+    path: "/slider/",
     element: (
       <SliderFC />
     )
